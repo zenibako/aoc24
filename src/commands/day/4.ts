@@ -30,7 +30,7 @@ export default class Day4 extends Command {
     name: Flags.string({ char: 'n', description: 'name to print' }),
   }
 
-  public async run(): Promise<void> {
+  public async run(): Promise<{ partOne: number, partTwo: number }> {
     const { args } = await this.parse(Day4)
 
     if (!args.file) {
@@ -105,7 +105,8 @@ export default class Day4 extends Command {
       }
     }
 
-    this.log(`Part 1: ${partOneMatches}`)
-    this.log(`Part 2: ${partTwoMatches}`)
+    const output = { partOne: partOneMatches, partTwo: partTwoMatches }
+    this.log(JSON.stringify(output))
+    return output
   }
 }

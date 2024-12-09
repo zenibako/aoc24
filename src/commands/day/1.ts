@@ -20,7 +20,7 @@ export default class Day1 extends Command {
     force: Flags.boolean({ char: 'f' }),
   }
 
-  public async run(): Promise<void> {
+  public async run(): Promise<{ partOne: number, partTwo: number }> {
     const { args } = await this.parse(Day1)
 
     if (!args.file) {
@@ -55,7 +55,8 @@ export default class Day1 extends Command {
       similarityScore += valueL * count
     }
 
-    this.log(`Part 1: ${totalDistance}`)
-    this.log(`Part 2: ${similarityScore}`)
+    const output = { partOne: totalDistance, partTwo: similarityScore }
+    this.log(JSON.stringify(output))
+    return output
   }
 }

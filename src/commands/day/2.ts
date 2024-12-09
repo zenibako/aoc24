@@ -51,7 +51,7 @@ export default class Day2 extends Command {
     force: Flags.boolean({ char: 'f' }),
   }
 
-  public async run(): Promise<void> {
+  public async run(): Promise<{ partOne: number, partTwo: number }> {
     const { args } = await this.parse(Day2)
 
     if (!args.file) {
@@ -82,6 +82,9 @@ export default class Day2 extends Command {
 
       return isSafe
     })
-    this.log(`Part 2: ${safeReportsWithDampener.length}`)
+
+    const output = { partOne: safeReports.length, partTwo: safeReportsWithDampener.length }
+    this.log(JSON.stringify(output))
+    return output
   }
 }
