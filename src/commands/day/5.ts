@@ -67,8 +67,8 @@ export default class Day5 extends Command {
             continue
           }
 
-      const comparedIsBefore = comparedIndex < selectedIndex
-      const comparedIsAfter = selectedIndex < comparedIndex
+          const comparedIsBefore = comparedIndex < selectedIndex
+          const comparedIsAfter = selectedIndex < comparedIndex
           if (afterPageRules.includes(comparedPage) && comparedIsBefore) {
             // Rule broken because compared page is before current page
             return false
@@ -107,7 +107,7 @@ export default class Day5 extends Command {
       }
     }
 
-    this.log(`Part 1 output: ${partOneOutput}`)
-    this.log(`Part 2 output: ${partTwoOutput}`)
+    this.log(`Part 1: ${partOneOutput}`)
+    this.log(`Part 2: ${partTwoOutput}`)
   }
 }

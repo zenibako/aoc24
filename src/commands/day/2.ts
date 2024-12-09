@@ -68,7 +68,7 @@ export default class Day2 extends Command {
       )
 
     const safeReports = input.filter((report) => (getUnsafeLevelIndexes(report).length === 0))
-    this.log(`Part One: ${safeReports.length}`)
+    this.log(`Part 1: ${safeReports.length}`)
 
     const safeReportsWithDampener = input.filter((report) => {
       let isSafe = true
@@ -82,6 +82,6 @@ export default class Day2 extends Command {
 
       return isSafe
     })
-    console.log(`Part Two: ${safeReportsWithDampener.length}`)
+    this.log(`Part 2: ${safeReportsWithDampener.length}`)
   }
 }

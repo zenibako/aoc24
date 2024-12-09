@@ -51,7 +51,7 @@ export default class Day4 extends Command {
 
     for (const row of rows) {
       const y = rows.indexOf(row)
-      console.log(row)
+      this.log(row)
       for (let x = 0; x < row.length; x++) {
         const letter = row.charAt(x)
         if (!Object.keys(letterIndexes).includes(letter)) {
@@ -105,7 +105,7 @@ export default class Day4 extends Command {
       }
     }
 
-    console.log(`Part 1: ${partOneMatches}`)
-    console.log(`Part 2: ${partTwoMatches}`)
+    this.log(`Part 1: ${partOneMatches}`)
+    this.log(`Part 2: ${partTwoMatches}`)
   }
 }
